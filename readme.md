@@ -180,5 +180,19 @@ Agrego a los HTML
 ```
 19. Creamos los formularios para agregar información, templates > tienda > personas_form.html
 ```
+    <form method="post" enctype="multipart/form-data" novalidate="">
+        {% carf-token %}
+        <h1>Persona</h1>
+        <label></label> <input type="text">
+        <label></label> <input type="text">
+        <label></label> <input type="text">
+        <label></label> <input type="text">
+        <label></label> <input type="text">
+        <label></label> <input type="text">
+        <label></label> <input type="text">
+    </form>
+```
+20. Modificar archivo tienda > views.py
+```
 
 ```
