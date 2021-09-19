@@ -194,5 +194,28 @@ Agrego a los HTML
 ```
 20. Modificar archivo tienda > views.py
 ```
+from django.shortcuts import render
+from .models import Persona
+from .forms import PersonaForm
+def nueva_persona(request, template_name="tienda/personas_form.html"):
+    if request.method == 'POST':
+        pass
+    else:
+        form = PersonaForm()
+    dato = {"form":form}
+    return render(request, template_name,dato)
+```
+21. Modificar tienda > urls.py
+```
+from django.urls import path
+from .views import persona_listar
+urlpatterns = [
+    path("personas",persona_listar,name='persona_listar'),
+    path("nueva_persona",views.nueva_persona,name="nueva_persona")
+]
+```
+22. Se crea el archivo templates > tienda > persona_form.py
+```
 
 ```
+23. 
