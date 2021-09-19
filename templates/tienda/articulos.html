@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de personas</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}" media="screen">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Descrición</th>
+                <th>Nº de Documento</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Dirección</th>
+                <th>Localidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{% for persona in personas %}}
+            <tr>
+                <td>{{ articulo. }}</td>
+                <td>{{ articulo. }}</td>
+                <td>{{ articulo. }}</td>
+                <td>{{ articulo. }}</td>
+                <td>{{ articulo. }}</td>
+                <td>{{ persona.email }}</td>
+                <td>{{ persona.direccion }}</td>
+                <td>{{ persona.localidad }}</td>
+            </tr>
+            {{% endfor %}}
+        </tbody>
+    </table>
+</body>
+</html>
