@@ -218,4 +218,16 @@ urlpatterns = [
 ```
 
 ```
-23. 
+23. Para modificar formulario se debe hacer en tienda > views.py
+```
+def modificar_persona(request,pk,template_name='tienda/personas_form.html'):
+    persona = Persona.objects.get(num_doc=pk)
+    form = PersonaForm(request.post or None, instance = persona)
+    if form.is_valid():
+        form.save(commit=True)
+        return redirect ("persona_listar")
+    else:
+        print(form.errors)
+    datos = ('form':form)
+    return render(request, template_name, datos)
+```
