@@ -231,3 +231,28 @@ def modificar_persona(request,pk,template_name='tienda/personas_form.html'):
     datos = ('form':form)
     return render(request, template_name, datos)
 ```
+24. Agregar a persona.html
+```
+    <table>
+        <thead>
+            <tr>
+                <th>Modificar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{% for persona in personas %}}
+            <tr>
+                <td><a href="{% url "modificar_persona_1" persona.num_doc %}">Modificar</a></td>
+            </tr>
+            {{% endfor %}}
+        </tbody>
+    </table>
+```
+25.
+```
+urlpatterns = [
+    path("personas",persona_listar,name='persona_listar'),
+    path("nueva_persona",views.nueva_persona,name="nueva_persona"),
+    path("modificar_personas/<int:pk>", views.modoficar_persona, views.modoficar_persona, name="modificar_personas_1")
+]
+```

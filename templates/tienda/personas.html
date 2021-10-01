@@ -21,6 +21,7 @@
                 <th>Email</th>
                 <th>Dirección</th>
                 <th>Localidad</th>
+                <th>Modificar</th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +35,7 @@
                 <td>{{ persona.email }}</td>
                 <td>{{ persona.direccion }}</td>
                 <td>{{ persona.localidad.cp }}</td>
+                <td><a href="{% url "modificar_persona_1" persona.num_doc %}">Modificar</a></td>
             </tr>
             {{% endfor %}}
         </tbody>
