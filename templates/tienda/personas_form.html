@@ -12,6 +12,16 @@
 <body>
     <form method="post" enctype="multipart/form-data" novalidate="">
         {% carf-token %}
+        {% if form.errors %}
+            <div class="alert-danger">
+                <p>Hay errores en los sigientes datos ingresados, intentelo nuevamente.</p>
+                {{ form.non_field_errors }}
+                <ul>
+                    {{% for field in form %}}
+                        {% if field.errors %}<li>{{ field.label }}: {{ field.errors|striptags }}</li>{% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
         <h1>Persona</h1>
         <label></label> <input type="text">
         <label></label> <input type="text">

@@ -256,3 +256,24 @@ urlpatterns = [
     path("modificar_personas/<int:pk>", views.modoficar_persona, views.modoficar_persona, name="modificar_personas_1")
 ]
 ```
+
+
+
+
+
+
+
+
+A continación de {% carf-token %} en persona_form.html, se coloca el cartel de donde hay errores en el llenado de formulario
+```
+{% if form.errors %}
+    <div class="alert-danger">
+        <p>Hay errores en los sigientes datos ingresados, intentelo nuevamente.</p>
+        {{ form.non_field_errors }}
+        <ul>
+            {{% for field in form %}}
+                {% if field.errors %}<li>{{ field.label }}: {{ field.errors|striptags }}</li>{% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+```
